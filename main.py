@@ -1,6 +1,5 @@
 from selenium import webdriver
-
-# 検索対象のエレメントがないとき
+# 検索対象のエレメントがないときの例外
 from selenium.common.exceptions import NoSuchElementException
 import csv
 import os
@@ -11,6 +10,7 @@ from tqdm import tqdm
 if not os.path.isfile("result.csv"):
     f = pathlib.Path("result.csv")
     f.touch()
+    
 # 保存するCSVファイルが存在する場合、ファイルを空にする
 elif os.path.isfile("result.csv"):
     os.remove("result.csv")
